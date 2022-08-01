@@ -1,5 +1,3 @@
-
-from locale import currency
 from django.contrib import admin
 
 # Register your models here.
