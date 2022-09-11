@@ -63,10 +63,11 @@ class Notification(models.Model):
      date = models.DateTimeField(default=datetime.now)
      status = models.CharField(max_length=12,null=True)
      message = models.CharField(max_length=8,null=True)
+     
 class Currency(models.Model):
     country= models.CharField(max_length=30,null=True)
     symbol= models.CharField(max_length=5,null=True)
-    amount= models.BigIntegerField()
+    symbol= models.BigIntegerField()
 
 class Receipt(models.Model):
     transaction = models.CharField(max_length=9,null=True)

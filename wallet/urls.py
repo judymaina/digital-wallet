@@ -8,6 +8,7 @@ from .views import register_currency
 from .views import register_reciept
 from .views import register_reward
 from .views import register_notification
+from .import views
 
 
 
@@ -23,4 +24,14 @@ path("regreciept/",register_reciept,name="registration"),
 path("regreward/",register_reward,name="registration"),
 path("regtransaction/",register_transaction,name="registration"),
 
+path("customers/",views.list_customers,name="customers_lists"),
+path("wallets/",views.list_wallets,name="wallets_lists"),
+path("accounts/",views.list_accounts,name="accounts_lists"),
+path("reciepts/",views.list_reciepts,name="reciepts_lists"),
+path("notifications/",views.list_notifications,name="notifications_lists"),
+path("rewards/",views.list_rewards,name="rewards_lists"),
+path("currencys/",views.list_currencys,name="currencys_lists"),
+path("loans/",views.list_loans,name="loans_lists"),
+path("transactions/",views.list_transactions,name="transactions_lists"),
 ]
+    
