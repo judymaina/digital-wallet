@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Account, Currency, Customer, Loan, Notification, Receipt, Reward, Wallet, Transaction
+from .models import Account,Customer, Loan, Notification, Receipt, Reward, Wallet, Transaction
 
 
 class CustomerRegistrationForm(forms.ModelForm):
@@ -38,10 +38,10 @@ class RewardRegistrationForm(forms.ModelForm):
         model = Reward
         fields = "__all__"  
 
-class CurrencyRegistrationForm(forms.ModelForm):
-    class Meta: #inherits from the parent and overrides
-        model = Currency
-        fields = "__all__"  
+# class CurrencyRegistrationForm(forms.ModelForm):
+#     class Meta: #inherits from the parent and overrides
+#         model = Currency
+#         fields = "__all__"  
 
 class TransactionRegistrationForm(forms.ModelForm):
     class Meta: #inherits from the parent and overrides

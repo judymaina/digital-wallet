@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Account, Card, Currency, Customer, Loan, Notification, Receipt, Reward, ThirdParty, Transaction, Wallet
+from .models import Account, Card, Customer, Loan, Notification, Receipt, Reward, ThirdParty, Transaction, Wallet
 
 class CustomerAdmin(admin.ModelAdmin):
      list_display=('first_name','last_name','age')
@@ -10,28 +10,28 @@ class CustomerAdmin(admin.ModelAdmin):
 admin.site.register(Customer,CustomerAdmin)
 
 class WalletAdmin(admin.ModelAdmin):
-     list_display=('amount','date_created','message')
-     search_fields=('amount','date_created','message')
+     list_display=('balance','date_created')
+     search_fields=('balance','date_created')
 admin.site.register(Wallet,WalletAdmin)
 
 class AccountAdmin(admin.ModelAdmin):
-     list_display=('account_name','account_type','account_balance')
-     search_fields=('account_name','account_type','account_balance')
+     list_display=('account_name','account_type','balance')
+     search_fields=('account_name','account_type','balance')
 admin.site.register(Account,AccountAdmin)
 
 class TransactionAdmin(admin.ModelAdmin):
-     list_display=('Date_time','amount','customer_ID')
-     search_fields=('Date_time','amount','customer_ID')
+     list_display=('date_time','transaction_amount','wallet')
+     search_fields=('date_time','transaction_amount','wallet')
 admin.site.register(Transaction,TransactionAdmin)
 
 class CardAdmin(admin.ModelAdmin):
-     list_display=('wallet','card_number','expiry_date')
-     search_fields=('wallet','card_number','expiry_date')
+     list_display=('wallet','cardholder_number','expiry_date')
+     search_fields=('wallet','cardholder_number','expiry_date')
 admin.site.register(Card,CardAdmin)
 
 class RecieptAdmin(admin.ModelAdmin):
-     list_display=('receipt_number','receipt_date','total_Amount')
-     search_fields=('receipt_number','receipt_date','total_Amount')
+     list_display=('receipt_date','total_Amount')
+     search_fields=('receipt_date','total_Amount')
 admin.site.register(Receipt,RecieptAdmin)
 
 class ThirdPartyAdmin(admin.ModelAdmin):
@@ -40,24 +40,19 @@ class ThirdPartyAdmin(admin.ModelAdmin):
 admin.site.register(ThirdParty,ThirdPartyAdmin)
 
 class NotificationAdmin(admin.ModelAdmin):
-     list_display=('date','status','message')
-     search_fields=('date','status','message')
+     list_display=('date','status')
+     search_fields=('date','status',)
 admin.site.register(Notification,NotificationAdmin)
 
 class LoanAdmin(admin.ModelAdmin):
-     list_display=('loan_type','loan_balance','loan_id')
-     search_fields=('loan_type','loan_balance','loan_id')
+     list_display=('loan_balance','pay_due_date')
+     search_fields=('loan_balance','pay_due_date')
 admin.site.register(Loan,LoanAdmin)
 
 class RewardAdmin(admin.ModelAdmin):
-     list_display=('gender','transaction','name')
-     search_fields=('balance','transaction_cost','name')
+     list_display=('gender','transaction')
+     search_fields=('balance','transaction_cost')
 admin.site.register(Reward,RewardAdmin)
-
-class Currencydmin(admin.ModelAdmin):
-     list_display=('country','symbol','symbol')
-     search_fields=('country','symbol','symbol')
-admin.site.register(Currency,Currencydmin)
 
 
 

@@ -1,37 +1,45 @@
 from django.urls import path
-from .views import register_customer
-from .views import register_wallet
-from .views import register_account
-from .views import register_transaction
-from .views import register_loan
-from .views import register_currency
-from .views import register_reciept
-from .views import register_reward
-from .views import register_notification
-from .import views
 
+from . import views
 
 
 urlpatterns=[
-path("register/",register_customer,name="registration"),
-path("regwallet/", register_wallet, name="registration"),
-path("regaccount/",register_account,name="registration"),
-path("regloan/",register_loan,name="registration"),
-path("regtranscation/",register_transaction,name="registration"),
-path("regnotification/",register_notification,name="registration"),
-path("regcurrency/",register_currency,name="registration"),
-path("regreciept/",register_reciept,name="registration"),
-path("regreward/",register_reward,name="registration"),
-path("regtransaction/",register_transaction,name="registration"),
+    path("register/", views.register_customer, name="registration"),
+    path("registerreward/", views.register_reward, name="reward"),
+    path("registeraccount/", views.register_account, name="account"),
+    path("registerwallet/", views.register_wallet, name="wallet"),
+    path("registercard/", views.register_card, name="card"),
+    path("registernotification/",views.register_notification, name="notification"),
+    path("registertransaction/", views.register_transaction, name="transaction"), 
+    path("registerthirdparty/", views.register_thirdparty, name="thirdparty"),
+    path("registerreceipt/", views.register_receipt, name="receipt"),
+    path("registerloan/", views.register_loan, name="loan"),
+    path("customers/", views.list_customers,name="customer_list"),
+    path("accounts/", views.list_account,name="account_list"),
+    path("wallets/", views.list_wallet,name="wallet_list"),
+    path("transactions/", views.list_transaction,name="transaction_list"),
+    path("cards/", views.list_card,name="card_list"),
+    path("thirdpartys/", views.list_thirdparty,name="thirdparty_list"),
+    path("notifications/", views.list_notification,name="notification_list"),
+    path("receipts/", views.list_receipt,name="receipt_list"),
+    path("rewards/", views.list_reward,name="reward_list"),
+    path("customers/<int:id>/",views.customer_profile,name="customer_profile"),
+    path("customers/edit/<int:id>/",views.edit_customer,name="edit_customer"),
+    path("accounts/<int:id>/", views.account_profile,name="account_profile"),
+    path("accounts/edit/<int:id>", views.edit_account,name="edit_account"),
+    path("wallets/<int:id>/", views.wallet_profile,name="wallet_profile"),
+    path("wallets/edit/<int:id>", views.edit_wallet,name="edit_wallet"),
+    path("cards/<int:id>/", views.card_profile,name="card_profile"),
+    path("cards/edit/<int:id>", views.edit_card,name="edit_card"),
+    path("accounts/<int:id>/", views.account_profile,name="account_profile"),
+    path("accounts/edit/<int:id>", views.edit_account,name="edit_account"),
+    path("transactions/<int:id>/", views.trannsaction_profile,name="transaction_profile"),
+    path("transactions/edit/<int:id>", views.edit_transaction,name="edit_transaction"),
+    path("receipts/<int:id>/", views.receipt_profile,name="receipt_profile"),
+    path("receipts/edit/<int:id>", views.edit_receipt,name="edit_receipt"),
 
-path("customers/",views.list_customers,name="customers_lists"),
-path("wallets/",views.list_wallets,name="wallets_lists"),
-path("accounts/",views.list_accounts,name="accounts_lists"),
-path("reciepts/",views.list_reciepts,name="reciepts_lists"),
-path("notifications/",views.list_notifications,name="notifications_lists"),
-path("rewards/",views.list_rewards,name="rewards_lists"),
-path("currencys/",views.list_currencys,name="currencys_lists"),
-path("loans/",views.list_loans,name="loans_lists"),
-path("transactions/",views.list_transactions,name="transactions_lists"),
-]
     
+
+
+]
+
