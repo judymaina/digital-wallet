@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'wallet',
     'rest_framework',
     'whitenoise.runserver_nostatic',
+    
 ]
 
 MIDDLEWARE = [
